@@ -38,6 +38,7 @@ public class session1_kan : MonoBehaviour
 
     // list
     List<int> myList = new List<int>();
+     
 
     // Dictionary
     Dictionary<string, string> movingAnimals = new Dictionary<string, string>();
