@@ -29,8 +29,6 @@ public class Session1Homework : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
-	}
 	void Start () 
     {
 

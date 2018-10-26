@@ -2,7 +2,7 @@
 
 // Class Definition
 // Scope -- Type -- Name
-public class Human
+public class Humans
 {
     // Variables
     int age;
@@ -13,7 +13,7 @@ public class Human
     float energy;
 
     // Constructor 
-    public Human(int _age, float _height, bool _gender, string _firstName,string _familyName)
+    public Humans(int _age, float _height, bool _gender, string _firstName,string _familyName)
 	{
         age = _age;
         height = _height;

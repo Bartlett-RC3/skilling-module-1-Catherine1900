@@ -16,7 +16,7 @@ public class Session2 : MonoBehaviour {
     int[] evenNumbersSmart = new int[10];
 
     //List to store humans
-    List<Human> rc3Tutors = new List<Human>();
+    List<Humans1> rc3Tutors = new List<Humans1>();
 
     // Use this for initialization
     void Start () {
@@ -115,9 +115,9 @@ public class Session2 : MonoBehaviour {
         }
 
         // Create the tutors
-        Human Octavian = new Human(31, 1.7f, true, "Octavian", "Gheorghiu");
-        Human Tyson = new Human(34, 1.8f, true, "Tyson", "Hosmer");
-        Human Dave = new Human(33, 1.75f, true, "Dave", "Reeves");
+        Humans1 Octavian = new Humans1(31, 1.7f, true, "Octavian", "Gheorghiu");
+        Humans1 Tyson = new Humans1(34, 1.8f, true, "Tyson", "Hosmer");
+        Humans1 Dave = new Humans1(33, 1.75f, true, "Dave", "Reeves");
 
         rc3Tutors.Add(Octavian);
         rc3Tutors.Add(Tyson);
