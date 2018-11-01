@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Session3_Kan : MonoBehaviour {
+public class Session3_Kan : MonoBehaviour
+{
     public GameObject cubeprefab;
     public GameObject Light;
     public GameObject objectReference;
@@ -15,20 +16,22 @@ public class Session3_Kan : MonoBehaviour {
     // Always here. 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         for (int i = 0; i < 10; i++)
         {
             for (int j = 0; j < 10; j++)
             {
-                Instantiate(cubeprefab, new Vector3 (i*spacing , j*spacing,0), Quaternion.identity,this.transform);
+                Instantiate(cubeprefab, new Vector3(i * spacing, j * spacing, 0), Quaternion.identity, this.transform);
             }
         }
-    
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         // Time.realtimeSinceStartup
         // Time.deltaTime
         // Time.time
@@ -37,7 +40,7 @@ public class Session3_Kan : MonoBehaviour {
         Debug.Log("omputer has counted this ammount of frames: " + Time.frameCount);
 
 
-        foreach(Transform child in this.transform)
+        foreach (Transform child in this.transform)
         {
             child.Translate(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
         }
@@ -48,8 +51,11 @@ public class Session3_Kan : MonoBehaviour {
         foreach (Transform child in this.transform)
         {
             child.RotateAroundLocal(Vector3.up, Random.value);
+
         }
 
+        // ROTATION
+        // Rotate children gameobjects around y axis
         foreach (Transform child in this.transform)
         {
             child.localScale = new Vector3(Random.Range(0.1f, 1), Random.Range(0.1f, 1), Random.Range(0.1f, 1));
@@ -69,7 +75,7 @@ public class Session3_Kan : MonoBehaviour {
         {
             // if i press space
             // if i re
-         
+
             foreach (Transform child in this.transform)
             {
 
