@@ -37,17 +37,17 @@ namespace RC3
         /// </summary>
         private void HandleKeyPress()
         {
-            // Reset model
-            if (Input.GetKeyDown(KeyCode.Space))
-                _model.ResetModel();
+            //// Reset model
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //    _model.ResetModel();
 
-            // Update display mode
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-                _display.DisplayMode = CellDisplayMode.Age;
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-                _display.DisplayMode = CellDisplayMode.LayerDensity;
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-                _display.DisplayMode = CellDisplayMode.NeighborDensity;
+            //// Update display mode
+            //if (Input.GetKeyDown(KeyCode.Alpha1))
+            //    _display.DisplayMode = CellDisplayMode.Age;
+            //else if (Input.GetKeyDown(KeyCode.Alpha2))
+            //    _display.DisplayMode = CellDisplayMode.LayerDensity;
+            //else if (Input.GetKeyDown(KeyCode.Alpha3))
+                //_display.DisplayMode = CellDisplayMode.NeighborDensity;
         }
     }
 }

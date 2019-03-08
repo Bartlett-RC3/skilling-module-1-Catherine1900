@@ -17,7 +17,7 @@ namespace RC3
         private StackModel _model;
         private float _densitySum;
         private int _currentLayer; // index of the most recently analysed layer
-
+        List<float> densityList = new List<float>();
 
         /// <summary>
         /// 
@@ -60,13 +60,17 @@ namespace RC3
         {
             int currentLayer = _model.CurrentLayer;
             CellLayer layer = _model.Stack.Layers[currentLayer];
-
+           
             //update layer current density
             var density = CalculateDensity(layer);
             layer.Density = density;
+
+            densityList.Add(layer.Density);
+
             _densitySum += density; // add to running sum
             
             _currentLayer = currentLayer;
+
         }
 
 

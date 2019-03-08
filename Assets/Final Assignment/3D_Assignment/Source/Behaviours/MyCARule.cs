@@ -18,10 +18,15 @@ namespace RC3
         private StackAnalyser _analyser;
 
         //setup some possible instruction sets
-        private GOLInstructionSet _instSetMO1 = new GOLInstructionSet(2, 3, 3, 3);
-        private GOLInstructionSet _instSetMO2 = new GOLInstructionSet(3, 4, 3, 4);
-        private GOLInstructionSet _instSetMO3 = new GOLInstructionSet(2, 5, 2, 6);
 
+        private GOLInstructionSet _instSetMO1 = new GOLInstructionSet(2, 3, 3, 3);
+        private GOLInstructionSet _instSetMO2 = new GOLInstructionSet(3, 3, 2, 2);//1311,1322
+        private GOLInstructionSet _instSetMO3 = new GOLInstructionSet(1, 1, 3, 3);
+        private GOLInstructionSet _instSetMO4 = new GOLInstructionSet(2, 4, 3, 4);//3434 group;MO 2434
+        private GOLInstructionSet _instSetMO5 = new GOLInstructionSet(1, 2, 2, 2);//M0
+        private GOLInstructionSet _instSetMO6 = new GOLInstructionSet(0, 2, 5, 5);
+        private GOLInstructionSet _instSetMO7 = new GOLInstructionSet(5, 6, 1, 2);
+        private GOLInstructionSet _instSetMO8 = new GOLInstructionSet(3, 4, 3, 4);
 
         /// <summary>
         /// 
@@ -72,22 +77,8 @@ namespace RC3
                 prevCellAge = 0;
             }
             
-            /*
-            if (currentlayerdensity < .17)
-            {
-                instructionSet = _instSetMO3;
-            }
 
-            if (currentlayerdensity >= .17 && currentlayerdensity<.2)
-            {
-                instructionSet = _instSetMO1;
-            }
 
-            if (currentlayerdensity >.2)
-            {
-                instructionSet = _instSetMO2;
-            }
-            */
 
             /*
             if(state==0 && sumVNPair == 2)
@@ -102,22 +93,22 @@ namespace RC3
             */
 
 
-            /*
-            if(currentlevel <= 40)
+
+            if(currentLayer <= 40)
             {
                 instructionSet = _instSetMO1;
             }
 
-            if (currentlevel > 40 && currentlevel<65)
+            if (currentLayer > 40 && currentLayer<65)
             {
                 instructionSet = _instSetMO2;
             }
 
-            if (currentlevel >= 65)
+            if (currentLayer >= 65)
             {
                 instructionSet = _instSetMO3;
             }
-            */
+            
 
 
             int output = 0;
