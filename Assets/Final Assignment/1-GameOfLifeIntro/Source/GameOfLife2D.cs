@@ -14,7 +14,6 @@ namespace RC3
         private Index2[] _offsets = Neighborhoods.MooreR1;
         private List<int>[] neighberSum;
 
-
         /// <summary>
         /// 
         /// </summary>
@@ -64,7 +63,7 @@ namespace RC3
             for (int i = 0; i < nrows; i++)
             {
                 for (int j = 0; j < ncols; j++)
-                    Step(i, j);
+                    StepOld(i, j);
             }
             
             // swap state buffers
@@ -77,7 +76,7 @@ namespace RC3
         /// </summary>
         /// <param name="i"></param>
         /// <param name="j"></param>
-        private void Step(int i, int j)
+        private void StepOld(int i, int j)
         {
             int state = _currentState[i, j];
             int sum = GetNeighborSum(i, j);
@@ -88,7 +87,16 @@ namespace RC3
                 _nextState[i, j] = (sum < 4 || sum > 7) ? 0 : 1; // alive rule
         }
 
+        private void StepYoung(int i, int j)
+        {
+            int state = _currentState[i, j];
+            int sum = GetNeighborSum(i, j);
 
+            if (state == 0)
+                _nextState[i, j] = (sum == 3) ? 1 : 0; // dead rule
+            else
+                _nextState[i, j] = (sum < 2 || sum > 3) ? 0 : 1; // alive rule
+        }
         /// <summary>
         /// 
         /// </summary>

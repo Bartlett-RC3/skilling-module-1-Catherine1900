@@ -13,8 +13,8 @@ namespace RC3
     {
         [SerializeField] private ModelInitializer _initializer;
         [SerializeField] private Cell _cellPrefab;
-        [SerializeField] private int _countX = 10;
-        [SerializeField] private int _countY = 10;
+        [SerializeField] private int _countX = 50;
+        [SerializeField] private int _countY = 50;
         [SerializeField] private int _ageDisplayMin = 0;
         [SerializeField] private int _ageDisplayMax = 10;
         [SerializeField] private Material _ageMaterial;
@@ -28,9 +28,9 @@ namespace RC3
         private int _stepCount;
 
 
-        private List<int> _totalcells = new List<int>();
+        private List<int> _cellsSum = new List<int>();
         private int _calculate = 0;
-
+        private int _density = 0;
         /// <summary>
         /// 
         /// </summary>
@@ -88,8 +88,7 @@ namespace RC3
                 for (int x = 0; x < _countX; x++)
                 {
                     _cells[y, x].State = state[y, x];
-                    _calculate = _calculate + state[y, x];
-
+                   
                     _cells[y, x].Age = state[y, x] > 0 ? _cells[y, x].Age + 1 : 0;
                 }
             }
@@ -97,16 +96,12 @@ namespace RC3
              // update cells age
             
          
-                  
 
+            var _density = CalculateDensity();
+            
+//            Debug.Log("density =" +_density);
 
-
-            _totalcells.Add(_calculate);
-            _calculate = 0;
-
-            for (int i = 0; i < _totalcells.Count; i++)
-                Debug.Log(_totalcells[i]);
-
+         
             displayColor = DisplayColor();
             StartCoroutine(displayColor);
 
@@ -122,6 +117,19 @@ namespace RC3
 
 
 
+        }
+
+        private float CalculateDensity()
+        {
+           
+            int aliveCount = 0;
+
+            foreach (var cell in _cells)
+                aliveCount += cell.State;
+
+            _cellsSum.Add(aliveCount);
+
+            return (float)aliveCount /_cells.Length;
         }
 
         private IEnumerator DisplayColor()
