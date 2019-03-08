@@ -19,7 +19,8 @@ public class Session4RayCasting_Kan : MonoBehaviour {
         {
             Debug.Log("Object in front is" + objectInFront.transform.name);
             //objectInFront.transform.GetComponent<ListenScript>().seen = true;
-            Destroy(objectInFront.transform.gameObject);
+            // Destroy(objectInFront.transform.gameObject);
+            objectInFront.transform.gameObject.transform.localScale = new Vector3(0, 0, 0);
         }
        
 	}
